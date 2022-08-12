@@ -42,9 +42,9 @@ scene.add(pointLight, ambientLight)
 
 // these helpers add a mesh to the light and a grid to the x axis
 
-const lightHelper = new THREE.PointLightHelper(pointLight)
-const gridHelper = new THREE.GridHelper(200, 50)
-scene.add(lightHelper, gridHelper)
+// const lightHelper = new THREE.PointLightHelper(pointLight)
+// const gridHelper = new THREE.GridHelper(200, 50)
+// scene.add(lightHelper, gridHelper)
 
 const controls = new OrbitControls(camera, renderer.domElement)
 
@@ -63,6 +63,9 @@ function addRings() {
 }
 
 Array(5).fill().forEach(addRings)
+
+const spaceTexture = new THREE.TextureLoader().load('blue.JPG')
+scene.background = spaceTexture
 
 function animate() {
   requestAnimationFrame(animate)
